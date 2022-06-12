@@ -11,7 +11,7 @@ def cipher(string,shift)
   end
 
   for i in ord_array
-    if i > 97 || i > 122
+    if i < 97 || i > 122
       cipher_ord_array.push(i)
     elsif i + shift > 122
       x = i + shift
@@ -25,4 +25,15 @@ def cipher(string,shift)
   for i in cipher_ord_array
     cipher_array.push(i.chr)
   end
+
+
+puts "your string is : '#{string}'"
+puts "your string will be converted into this array : #{string_array}"
+puts "the ordinal array of your string array will be : #{ord_array}"
+puts "which will be converted into this cipher : #{cipher_ord_array}"
+puts "which is converted into charaters : #{cipher_array}"
+puts "your combined cipher will be : '#{cipher_array.join('')}'"
+
 end
+
+cipher("what a string!",5)
